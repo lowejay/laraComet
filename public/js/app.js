@@ -3230,12 +3230,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'ContactScreen',
+  name: "ContactScreen",
   components: {
     UserList: _cometchat_components_components_UserList__WEBPACK_IMPORTED_MODULE_1__["default"],
     MessageContainer: _cometchat_components_components_MessageContainer__WEBPACK_IMPORTED_MODULE_2__["default"],
@@ -3257,13 +3265,13 @@ __webpack_require__.r(__webpack_exports__);
         _this.currentUser = user;
       }
     }, function (error) {
-      console.log('error', error);
+      console.log("error", error);
     });
   },
   mounted: function mounted() {
     this.$root.$on("selectedUser", function (data) {
       console.log(data);
-      var el = document.getElementById('pageWrapper');
+      var el = document.getElementById("pageWrapper");
 
       if (el.classList.contains("left-open")) {
         el.classList.add("center-open");
@@ -3314,14 +3322,34 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       username: "",
-      password: '',
+      password: "",
       showSpinner: false,
-      token: ''
+      token: ""
     };
   },
   methods: {
@@ -3335,7 +3363,7 @@ __webpack_require__.r(__webpack_exports__);
       this.showSpinner = true;
 
       if (this.username && this.password) {
-        axios.post("http://localhost:8000/login", userData).then(function (response) {
+        axios.post("/login", userData).then(function (response) {
           _this.logUserInToCometChat(response.data.user.authToken);
 
           _this.showSpinner = false;
@@ -3344,7 +3372,7 @@ __webpack_require__.r(__webpack_exports__);
           _this.showSpinner = false;
         });
       } else {
-        console.log('Please fill the required fields');
+        console.log("Please fill the required fields");
       }
     },
     logUserInToCometChat: function logUserInToCometChat(token) {
@@ -3352,7 +3380,7 @@ __webpack_require__.r(__webpack_exports__);
 
       _cometchat_pro_chat__WEBPACK_IMPORTED_MODULE_0__["CometChat"].login(token).then(function () {
         // console.log("successfully login user");
-        window.location.href = '/home';
+        window.location.href = "/home";
       }, function (error) {
         _this2.showSpinner = false;
         alert("Error occured");
@@ -3413,12 +3441,41 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       username: "",
-      password: '',
-      password_confirmation: '',
+      password: "",
+      password_confirmation: "",
       showSpinner: false
     };
   },
@@ -3435,7 +3492,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             password: this.password,
             password_confirmation: this.password_confirmation
           };
-          axios.post("http://localhost:8000/register", data).then(function (response) {
+          axios.post("/register", data).then(function (response) {
             console.log(response.data.status);
 
             if (response.data.status) {
@@ -3451,7 +3508,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }
     },
     redirect: function redirect() {
-      window.location.href = '/login';
+      window.location.href = "/login";
     },
     createUserOnCometChat: function createUserOnCometChat(username) {
       var _this2 = this;
@@ -3466,16 +3523,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 data = {
                   uid: username,
                   name: "".concat(username),
-                  avatar: 'https://data-us.cometchat.io/assets/images/avatars/captainamerica.png'
+                  avatar: "https://data-us.cometchat.io/assets/images/avatars/captainamerica.png"
                 };
                 _context.prev = 2;
                 _context.next = 5;
                 return fetch(url, {
-                  method: 'POST',
+                  method: "POST",
                   headers: new Headers({
                     appid: "247928ef43cd09f",
                     apikey: "cbb99f6063a4e88f082d0d4cc81c25dfff28c7e0",
-                    'Content-Type': 'application/json'
+                    "Content-Type": "application/json"
                   }),
                   body: JSON.stringify(data)
                 });
@@ -3497,7 +3554,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 12:
                 _context.prev = 12;
                 _context.t0 = _context["catch"](2);
-                console.log('Error', _context.t0);
+                console.log("Error", _context.t0);
 
               case 15:
               case "end":
@@ -3520,11 +3577,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 _context2.prev = 1;
                 _context2.next = 4;
                 return fetch(url, {
-                  method: 'POST',
+                  method: "POST",
                   headers: new Headers({
                     appid: "247928ef43cd09f",
                     apikey: "cbb99f6063a4e88f082d0d4cc81c25dfff28c7e0",
-                    'Content-Type': 'application/json'
+                    "Content-Type": "application/json"
                   })
                 });
 
@@ -3545,7 +3602,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 12:
                 _context2.prev = 12;
                 _context2.t0 = _context2["catch"](1);
-                console.log('Error Token', _context2.t0);
+                console.log("Error Token", _context2.t0);
 
               case 15:
               case "end":
@@ -3558,7 +3615,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     sendTokenToServer: function sendTokenToServer(token, uid) {
       var _this4 = this;
 
-      axios.post("http://localhost:8000/update/token", {
+      axios.post("/update/token", {
         token: token,
         uid: uid
       }).then(function (response) {
@@ -8013,7 +8070,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.avatar[data-v-44e28b3c] {\n    width: 100%x;\n    height: 100%;\n    color: #fff;\n    font-size: 18px;\n    text-align: center;\n    border-radius: 50%;\n    padding: 5px;\n}\n\n", ""]);
+exports.push([module.i, "\n.avatar[data-v-44e28b3c] {\r\n    width: 100%x;\r\n    height: 100%;\r\n    color: #fff;\r\n    font-size: 18px;\r\n    text-align: center;\r\n    border-radius: 50%;\r\n    padding: 5px;\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -8032,7 +8089,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* loader start here */\n.br[data-v-6e9b0cf6] {\n  border-radius: 8px;\n}\n.w80[data-v-6e9b0cf6] {\n  width: 80%;\n}\n.card[data-v-6e9b0cf6] {\n  border: 2px solid #fff;\n  padding: 30px 40px;\n  width: 80%;\n  margin: 50px auto;\n}\n.wrapper[data-v-6e9b0cf6] {\n  width: 0px;\n  -webkit-animation: fullView-data-v-6e9b0cf6 0.5s forwards cubic-bezier(0.250, 0.460, 0.450, 0.940);\n          animation: fullView-data-v-6e9b0cf6 0.5s forwards cubic-bezier(0.250, 0.460, 0.450, 0.940);\n}\n.comment[data-v-6e9b0cf6] {\n  height: 10px;\n  background: #777;\n  margin-top: 20px;\n}\n@-webkit-keyframes fullView-data-v-6e9b0cf6 {\n100% {\n    width: 100%;\n}\n}\n@keyframes fullView-data-v-6e9b0cf6 {\n100% {\n    width: 100%;\n}\n}\n.animate[data-v-6e9b0cf6] {\n  -webkit-animation : shimmer-data-v-6e9b0cf6 2s infinite linear;\n          animation : shimmer-data-v-6e9b0cf6 2s infinite linear;\n  background: linear-gradient(to right, #eff1f3 4%, #e2e2e2 25%, #eff1f3 36%);\n  background-size: 1000px 100%;\n}\n@-webkit-keyframes shimmer-data-v-6e9b0cf6 {\n0% {\n    background-position: -1000px 0;\n}\n100% {\n    background-position: 1000px 0;\n}\n}\n@keyframes shimmer-data-v-6e9b0cf6 {\n0% {\n    background-position: -1000px 0;\n}\n100% {\n    background-position: 1000px 0;\n}\n}\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/* loader start here */\n.br[data-v-6e9b0cf6] {\r\n  border-radius: 8px;\n}\n.w80[data-v-6e9b0cf6] {\r\n  width: 80%;\n}\n.card[data-v-6e9b0cf6] {\r\n  border: 2px solid #fff;\r\n  padding: 30px 40px;\r\n  width: 80%;\r\n  margin: 50px auto;\n}\n.wrapper[data-v-6e9b0cf6] {\r\n  width: 0px;\r\n  -webkit-animation: fullView-data-v-6e9b0cf6 0.5s forwards cubic-bezier(0.250, 0.460, 0.450, 0.940);\r\n          animation: fullView-data-v-6e9b0cf6 0.5s forwards cubic-bezier(0.250, 0.460, 0.450, 0.940);\n}\n.comment[data-v-6e9b0cf6] {\r\n  height: 10px;\r\n  background: #777;\r\n  margin-top: 20px;\n}\n@-webkit-keyframes fullView-data-v-6e9b0cf6 {\n100% {\r\n    width: 100%;\n}\n}\n@keyframes fullView-data-v-6e9b0cf6 {\n100% {\r\n    width: 100%;\n}\n}\n.animate[data-v-6e9b0cf6] {\r\n  -webkit-animation : shimmer-data-v-6e9b0cf6 2s infinite linear;\r\n          animation : shimmer-data-v-6e9b0cf6 2s infinite linear;\r\n  background: linear-gradient(to right, #eff1f3 4%, #e2e2e2 25%, #eff1f3 36%);\r\n  background-size: 1000px 100%;\n}\n@-webkit-keyframes shimmer-data-v-6e9b0cf6 {\n0% {\r\n    background-position: -1000px 0;\n}\n100% {\r\n    background-position: 1000px 0;\n}\n}\n@keyframes shimmer-data-v-6e9b0cf6 {\n0% {\r\n    background-position: -1000px 0;\n}\n100% {\r\n    background-position: 1000px 0;\n}\n}\r\n", ""]);
 
 // exports
 
@@ -8052,7 +8109,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.ccl-secondary-color {\n  color: rgba(20, 20, 20, 0.6);\n}\n.ccl-blue-color {\n  color: #39f;\n}\n.clearfix::after,\n.clearfix::before {\n  content: \" \";\n  display: table;\n}\n.clearfix,\n.clearfix::after {\n  clear: both;\n}\n.page-int-wrapper {\n  display: flex;\n  position: fixed;\n  height: 100%;\n  width: 100%;\n}\n.ccl-center-panel {\n  height: 100vh;\n  position: relative;\n  padding-top: 71px;\n  padding-bottom: 70px;\n  flex: 1 1 0;\n  width: calc(100% - 280px);\n}\n.chat-ppl-thumbnail-wrap img,\n.cc1-chat-win-user-thumb img {\n  display: block;\n  border-radius: 18px;\n  overflow: hidden;\n  width: 36px;\n}\n.cc1-chat-win-header {\n  padding: 14px 16px;\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: 100%;\n  background-color: #fff;\n  z-index: 1;\n}\n.cc1-chat-win-user {\n  display: inline-block;\n  float: left;\n}\n.cc1-chat-win-user-thumb,\n.cc1-left-panel-user-thumb {\n  display: inline-block;\n  width: 36px;\n  height: 36px;\n  margin-right: 10px;\n  vertical-align: middle;\n  border-radius: 24px;\n  overflow: hidden;\n}\n.cc1-chat-win-user-name-wrap,\n.cc1-left-panel-user-name-wrap {\n  display: inline-block;\n  vertical-align: middle;\n}\n.cc1-chat-win-user-name,\n.cc1-left-panel-user-name {\n  margin: 0;\n  font-size: 15px;\n  font-weight: 600;\n  letter-spacing: -0.1px;\n  line-height: 22px;\n}\n.cc1-chat-win-con-opt-wrap {\n  display: inline-block;\n  float: right;\n  padding: 8px 0;\n}\n.cc1-chat-win-user-status,\n.cc1-left-panel-user-status {\n  font-size: 13px;\n  letter-spacing: -0.1px;\n  line-height: 20px;\n}\n.cc1-chat-win-con-opt {\n  display: inline-block;\n  width: 20px;\n  height: 20px;\n  padding: 2px;\n  margin-left: 20px;\n}\n.cc1-chat-win-con-opt.call {\n  background: url(" + escape(__webpack_require__(/*! ./../assets/images/svg/call-blue-icon.svg */ "./resources/js/cometchat-components/assets/images/svg/call-blue-icon.svg")) + ") center center\n    no-repeat;\n}\n.cc1-chat-win-con-opt.video-call {\n  background: url(" + escape(__webpack_require__(/*! ./../assets/images/svg/video-call-blue-icon.svg */ "./resources/js/cometchat-components/assets/images/svg/video-call-blue-icon.svg")) + ") center center\n    no-repeat;\n}\n.cc1-chat-win-con-opt.details {\n  background: url(" + escape(__webpack_require__(/*! ./../assets/images/svg/details-pane-blue-icon.svg */ "./resources/js/cometchat-components/assets/images/svg/details-pane-blue-icon.svg")) + ") center\n    center no-repeat;\n}\n.cc1-chat-win-conver-wrap {\n  padding: 5px 16px;\n  height: calc(100vh - 132px);\n  overflow-y: auto;\n  background-color: #fff;\n  z-index: 1;\n  position: relative;\n}\n.cc1-chat-win-rcvr-msg-wrap {\n  display: inline-block;\n  border-radius: 12px;\n  background-color: rgba(248, 248, 248, 0.92);\n  padding: 8px 12px;\n  word-break: break-all;\n}\n.chat-txt-msg {\n  font-size: 15px;\n  margin: 0;\n  letter-spacing: -0.1px;\n  line-height: 20px;\n}\n.cc1-chat-win-rcvr-row {\n  margin-bottom: 16px;\n}\n.cc1-chat-win-msg-block {\n  display: inline-block;\n  position: relative;\n  max-width: 70%;\n}\n.cc1-chat-win-rcvr-row .cc1-chat-win-msg-block {\n  float: left;\n}\n.cc1-chat-win-sndr-row .cc1-chat-win-msg-block {\n  float: right;\n}\n.cc1-chat-win-sndr-row {\n  /* text-align: right; */\n  margin-bottom: 16px;\n}\n.cc1-chat-win-sndr-msg-wrap {\n  display: inline-block;\n  border-radius: 12px;\n  background-color: rgba(51, 153, 255, 0.92);\n  color: #fff;\n  padding: 8px 12px;\n  word-break: break-all;\n}\n.cc1-chat-win-timestamp {\n  display: inline-block;\n  font-size: 11px;\n  font-weight: 500;\n  letter-spacing: -0.1px;\n  line-height: 12px;\n  text-transform: uppercase;\n  margin-top: 5px;\n}\n.cc1-chat-win-rcvr-row .cc1-chat-win-timestamp {\n  margin-left: 5px;\n}\n.cc1-chat-win-msg-like-cnt {\n  display: inline-block;\n  float: right;\n  background-color: #fff;\n  border-radius: 9px;\n  font-size: 11px;\n  letter-spacing: -0.1px;\n  line-height: 12px;\n  box-shadow: rgba(20, 20, 20, 0.08) 0 2px 6px, rgba(20, 20, 20, 0.04) 0 1px 1px,\n    rgba(20, 20, 20, 0.04) 0 0 0 1px;\n  padding: 5px;\n  text-align: right;\n  margin-top: 3px;\n}\n.cc1-chat-win-sndr-row .cc1-chat-win-timestamp {\n  margin-right: 5px;\n}\n.cc1-chat-win-sndr-row .cc1-chat-win-timestamp svg {\n  margin-left: 3px;\n  display: inline-block;\n  vertical-align: bottom;\n}\n.cc1-chat-win-reply-for-msg {\n  letter-spacing: -0.1px;\n  line-height: 20px;\n  font-size: 15px;\n  position: relative;\n  padding-left: 8px;\n  margin-bottom: 7px;\n}\n.cc1-chat-win-reply-for-msg::before {\n  content: \"\";\n  display: block;\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 3px;\n  height: 96%;\n  background-color: rgba(20, 20, 20, 0.11);\n  border-radius: 2px;\n}\n.cc1-chat-win-location-wrap {\n  width: 308px;\n  height: 146px;\n  position: relative;\n  border-radius: 12px;\n  overflow: hidden;\n  background-color: rgba(248, 248, 248, 0.92);\n}\n.cc1-chat-win-location-dtls {\n  position: absolute;\n  display: block;\n  width: 100%;\n  bottom: 0;\n  left: 0;\n  padding: 10px 16px;\n}\n.cc1-chat-win-location-name {\n  margin: 0;\n  font-size: 15px;\n  font-weight: 600;\n  letter-spacing: -0.1px;\n  line-height: 20px;\n}\n.cc1-chat-win-location-txt {\n  font-size: 13px;\n  font-weight: 400;\n  letter-spacing: -0.1px;\n  line-height: 20px;\n}\n.cc1-chat-win-inpt-ext-wrap {\n  padding: 14px 0;\n  width: 100%;\n  position: absolute;\n  left: 0;\n  bottom: 0;\n  background-color: #fff;\n  z-index: 1;\n}\n.cc1-chat-win-inpt-int-wrap {\n  display: flex;\n}\n.cc1-chat-win-inpt-attach {\n  width: 60px;\n  text-align: center;\n}\n.cc1-chat-win-inpt-wrap {\n  flex: 1 1 0;\n  position: relative;\n}\n.cc1-chat-win-inpt-send {\n  width: 60px;\n  text-align: center;\n}\n.cc1-chat-win-inpt-attach a,\n.cc1-chat-win-inpt-send a {\n  padding: 3px;\n  margin-top: 7px;\n  display: inline-block;\n}\n/* .cc1-chat-win-inpt-send-btn img,\n.cc1-chat-win-inpt-voice-btn img {\n  display: none;\n} */\n/* .cc1-chat-win-inpt-send-btn {\n  width: 20px;\n  height: 18px;\n  background: url(./../assets/images/svg/send-blue-icon.svg) center center\n    no-repeat;\n}\n.cc1-chat-win-inpt-voice-btn {\n  width: 14px;\n  height: 19px;\n  background: url(./../assets/images/svg/voice-record-grey-icon.svg) center\n    center no-repeat;\n} */\n/* .cc1-chat-win-inpt-attach a img {\n  display: none;\n} */\n/* .cc1-chat-win-inpt-attach a {\n  width: 20px;\n  height: 20px;\n  background: url(./../assets/images/svg/rounded-plus-grey-icon.svg) center\n    center no-repeat;\n} */\na.cc1-chat-win-inpt-voice-btn {\n  margin-top: 5px;\n}\n.cc1-chat-win-inpt-box {\n  display: block;\n  width: 100%;\n  border: 0;\n  box-shadow: rgba(20, 20, 20, 0.04) 0 0 0 1px inset;\n  border-radius: 8px;\n  background-color: rgba(20, 20, 20, 0.04);\n  letter-spacing: -0.1px;\n  line-height: 20px;\n  padding: 6px 36px 6px 12px;\n}\n.smile-button {\n  width: 20px;\n  height: 20px;\n  display: block;\n  position: absolute;\n  right: 9px;\n  top: 6px;\n  background: url(" + escape(__webpack_require__(/*! ./../assets/images/svg/smilie-grey-icon.svg */ "./resources/js/cometchat-components/assets/images/svg/smilie-grey-icon.svg")) + ") center center\n    no-repeat;\n}\n.cc1-chat-win-inpt-rply-for-wrap {\n  position: relative;\n  padding: 0 14px 0 28px;\n  margin-bottom: 14px;\n}\n.cc1-chat-win-inpt-rply-for-wrap::before {\n  content: \"\";\n  display: block;\n  position: absolute;\n  top: 0;\n  left: 14px;\n  width: 3px;\n  height: 96%;\n  background-color: rgba(20, 20, 20, 0.11);\n  border-radius: 2px;\n}\n.cc1-chat-win-inpt-rply-ttl {\n  display: block;\n  font-size: 12px;\n  font-weight: 500;\n  letter-spacing: -0.1px;\n  line-height: 16px;\n  color: #969696;\n}\n.cc1-chat-win-inpt-rply-for-msg {\n  margin: 0;\n  font-size: 13px;\n  letter-spacing: -0.1px;\n  line-height: 18px;\n}\n.cc1-chat-win-inpt-rply-for-close {\n  position: absolute;\n  width: 20px;\n  height: 20px;\n  display: block;\n  background: url(" + escape(__webpack_require__(/*! ./../assets/images/svg/cross-grey-icon.svg */ "./resources/js/cometchat-components/assets/images/svg/cross-grey-icon.svg")) + ") center center /\n    10px no-repeat;\n  top: 7px;\n  right: 17px;\n}\n.cc1-chat-win-inpt-sug-wrap {\n  width: 100%;\n  position: absolute;\n  padding: 14px;\n  left: 0;\n  top: -62px;\n  z-index: 1;\n  text-align: center;\n}\n.cc1-chat-win-inpt-sug-msg {\n  box-shadow: rgba(20, 20, 20, 0.08) 0 2px 6px, rgba(20, 20, 20, 0.04) 0 1px 1px,\n    rgba(20, 20, 20, 0.04) 0 0 0 1px;\n  border-radius: 18px;\n  background-color: #fff;\n  display: inline-block;\n  padding: 8px 12px;\n  margin: 0 6px;\n}\n.cc1-chat-win-stik-popup {\n  position: absolute;\n  right: 44px;\n  bottom: 62px;\n  width: 280px;\n  height: 286px;\n  box-shadow: rgba(20, 20, 20, 0.2) 0 16px 32px,\n    rgba(20, 20, 20, 0.04) 0 0 0 1px;\n  border-radius: 8px;\n  background-color: #fff;\n  overflow: hidden;\n  z-index: 1;\n}\n.cc1-chat-win-stik-type-list {\n  padding: 15px 20px;\n  background-color: rgba(255, 255, 255, 0.92);\n  border-bottom: 1px solid #fdfcfc;\n}\n.cc1-chat-win-stik-typ {\n  display: inline-block;\n  width: 20px;\n  height: 20px;\n  margin: 0 7px;\n}\n.cc1-chat-win-stik-typ.search {\n  background: url(" + escape(__webpack_require__(/*! ./../assets/images/svg/search-grey-icon.svg */ "./resources/js/cometchat-components/assets/images/svg/search-grey-icon.svg")) + ") center center /\n    17px 18px no-repeat;\n}\n.cc1-chat-win-stik-typ.recent {\n  background: url(" + escape(__webpack_require__(/*! ./../assets/images/svg/recent-grey-icon.svg */ "./resources/js/cometchat-components/assets/images/svg/recent-grey-icon.svg")) + ") center center /\n    21px 18px no-repeat;\n  position: relative;\n  margin-right: 22px;\n}\n.cc1-chat-win-stik-typ.cheese {\n  background: url(" + escape(__webpack_require__(/*! ./../assets/images/svg/cheese-sector-grey-icon.svg */ "./resources/js/cometchat-components/assets/images/svg/cheese-sector-grey-icon.svg")) + ") center\n    center / 17px 19px no-repeat;\n}\n.cc1-chat-win-stik-typ.cube {\n  background: url(" + escape(__webpack_require__(/*! ./../assets/images/svg/cube-grey-icon.svg */ "./resources/js/cometchat-components/assets/images/svg/cube-grey-icon.svg")) + ") center center /\n    18px 18px no-repeat;\n}\n.cc1-chat-win-stik-typ.umbrella {\n  background: url(" + escape(__webpack_require__(/*! ./../assets/images/svg/umbrella-grey-icon.svg */ "./resources/js/cometchat-components/assets/images/svg/umbrella-grey-icon.svg")) + ") center center /\n    18px 18px no-repeat;\n}\n.cc1-chat-win-stik-typ.add {\n  background: url(" + escape(__webpack_require__(/*! ./../assets/images/svg/plus-grey-icon.svg */ "./resources/js/cometchat-components/assets/images/svg/plus-grey-icon.svg")) + ") center center /\n    20px no-repeat;\n}\n.cc1-chat-win-stik-typ.cheese.active {\n  background: url(" + escape(__webpack_require__(/*! ./../assets/images/svg/cheese-sector-blue-icon.svg */ "./resources/js/cometchat-components/assets/images/svg/cheese-sector-blue-icon.svg")) + ") center\n    center / 17px 19px no-repeat;\n}\n.cc1-chat-win-stik-typ.recent::before {\n  content: \"\";\n  position: absolute;\n  display: block;\n  width: 1px;\n  height: 20px;\n  background-color: rgba(20, 20, 20, 0.1);\n  top: 0;\n  right: -17px;\n}\n.cc1-chat-win-stik-type-wrap {\n  padding: 0 7px;\n  height: 238px;\n}\n.cc1-chat-win-stik-item {\n  display: inline-block;\n  width: 78px;\n  height: 80px;\n  margin: 3px;\n  float: left;\n}\n.ccl-chat-center-panel {\n  position: relative;\n}\n.ccl-center-panel-close-link,\n.ccl-right-panel-close-link {\n  position: absolute;\n  width: 32px;\n  height: 32px;\n  border-radius: 50%;\n  top: 34px;\n  left: 20px;\n  right: initial;\n  background: url(" + escape(__webpack_require__(/*! ./../assets/images/svg/left-blue-arrow.svg */ "./resources/js/cometchat-components/assets/images/svg/left-blue-arrow.svg")) + ") center center\n    no-repeat rgba(20, 20, 20, 0);\n  display: none;\n  z-index: 1;\n}\n.dark-theme {\n  background-color: #141414;\n  color: #fff;\n}\n.dark-theme .ccl-secondary-color {\n  color: rgba(255, 255, 255, 0.6);\n}\n.dark-theme .cc1-chat-win-header,\n.dark-theme .cc1-chat-win-conver-wrap,\n.dark-theme .cc1-chat-win-inpt-ext-wrap {\n  background-color: #141414;\n}\n.dark-theme .cc1-chat-win-rcvr-msg-wrap,\n.dark-theme .cc1-chat-win-location-wrap {\n  background-color: rgba(51, 51, 51, 0.92);\n}\n.dark-theme .cc1-chat-win-location-txt,\n.dark-theme .cc1-chat-win-timestamp,\n.dark-theme .cc1-chat-win-inpt-rply-for-msg {\n  color: rgba(255, 255, 255, 0.6);\n}\n.dark-theme .cc1-chat-win-msg-like-cnt {\n  color: rgba(255, 255, 255, 0.6);\n  background-color: rgba(51, 51, 51, 0.92);\n}\n.dark-theme .cc1-chat-win-inpt-rply-for-wrap::before {\n  background-color: rgba(255, 255, 255, 0.12);\n}\n.dark-theme .cc1-chat-win-inpt-box {\n  background-color: rgba(255, 255, 255, 0.08);\n  box-shadow: rgba(255, 255, 255, 0.04) 0 0 0 1px inset;\n  color: #fff;\n}\n.dark-theme .smile-button {\n  background: url(" + escape(__webpack_require__(/*! ./../assets/images/svg/smilie-light-grey-icon.svg */ "./resources/js/cometchat-components/assets/images/svg/smilie-light-grey-icon.svg")) + ") center\n    center no-repeat;\n}\n.dark-theme .cc1-chat-win-inpt-attach a {\n  background: url(" + escape(__webpack_require__(/*! ./../assets/images/svg/rounded-plus-light-grey-icon.svg */ "./resources/js/cometchat-components/assets/images/svg/rounded-plus-light-grey-icon.svg")) + ")\n    center center no-repeat;\n}\n.dark-theme .cc1-chat-win-inpt-rply-for-close {\n  background: url(" + escape(__webpack_require__(/*! ./../assets/images/svg/cross-light-grey-icon.svg */ "./resources/js/cometchat-components/assets/images/svg/cross-light-grey-icon.svg")) + ") center\n    center no-repeat;\n}\n.dark-theme .cc1-chat-win-inpt-sug-msg {\n  background-color: #424242;\n}\n.dark-theme .cc1-chat-win-stik-popup,\n.dark-theme .cc1-chat-win-stik-type-list {\n  background-color: rgba(51, 51, 51, 0.92);\n  border-bottom: none;\n}\n.dark-theme .cc1-chat-win-stik-typ.search {\n  background: url(" + escape(__webpack_require__(/*! ./../assets/images/svg/search-white-icon.svg */ "./resources/js/cometchat-components/assets/images/svg/search-white-icon.svg")) + ") center center /\n    17px 18px no-repeat;\n}\n.dark-theme .cc1-chat-win-stik-typ.recent {\n  background: url(" + escape(__webpack_require__(/*! ./../assets/images/svg/recent-light-grey-icon.svg */ "./resources/js/cometchat-components/assets/images/svg/recent-light-grey-icon.svg")) + ") center\n    center / 21px 18px no-repeat;\n}\n.dark-theme .cc1-chat-win-stik-typ.cheese {\n  background: url(" + escape(__webpack_require__(/*! ./../assets/images/svg/cheese-sector-light-grey-icon.svg */ "./resources/js/cometchat-components/assets/images/svg/cheese-sector-light-grey-icon.svg")) + ")\n    center center / 17px 19px no-repeat;\n}\n.dark-theme .cc1-chat-win-stik-typ.cube {\n  background: url(" + escape(__webpack_require__(/*! ./../assets/images/svg/cube-light-grey-icon.svg */ "./resources/js/cometchat-components/assets/images/svg/cube-light-grey-icon.svg")) + ") center center /\n    18px 18px no-repeat;\n}\n.dark-theme .cc1-chat-win-stik-typ.umbrella {\n  background: url(" + escape(__webpack_require__(/*! ./../assets/images/svg/umbrella-light-grey-icon.svg */ "./resources/js/cometchat-components/assets/images/svg/umbrella-light-grey-icon.svg")) + ") center\n    center / 18px 18px no-repeat;\n}\n.dark-theme .cc1-chat-win-stik-typ.add {\n  background: url(" + escape(__webpack_require__(/*! ./../assets/images/svg/plus-light-grey-icon.svg */ "./resources/js/cometchat-components/assets/images/svg/plus-light-grey-icon.svg")) + ") center center /\n    20px no-repeat;\n}\n.dark-theme .cc1-chat-win-stik-typ.cheese.active {\n  background: url(" + escape(__webpack_require__(/*! ./../assets/images/svg/cheese-sector-blue-icon.svg */ "./resources/js/cometchat-components/assets/images/svg/cheese-sector-blue-icon.svg")) + ") center\n    center / 17px 19px no-repeat;\n}\n.dark-theme .cc1-chat-win-stik-typ.recent::before {\n  background-color: rgba(255, 255, 255, 0.1);\n}\n.dark-theme .cc1-chat-win-inpt-voice-btn {\n  background: url(" + escape(__webpack_require__(/*! ./../assets/images/svg/voice-record-light-grey-icon.svg */ "./resources/js/cometchat-components/assets/images/svg/voice-record-light-grey-icon.svg")) + ")\n    center center no-repeat;\n}\n.cometchat-logo {\n  width: 200px;\n  margin: 0 auto;\n}\n@media (min-width : 320px) and (max-width : 767px) {\n.cc1-chat-win-inpt-ext-wrap {\n    bottom: 60px;\n}\n.cc1-chat-win-conver-wrap {\n    height: calc(100vh - 185px);\n}\n}\n\n\n", ""]);
+exports.push([module.i, "\n.ccl-secondary-color {\r\n  color: rgba(20, 20, 20, 0.6);\n}\n.ccl-blue-color {\r\n  color: #39f;\n}\n.clearfix::after,\r\n.clearfix::before {\r\n  content: \" \";\r\n  display: table;\n}\n.clearfix,\r\n.clearfix::after {\r\n  clear: both;\n}\n.page-int-wrapper {\r\n  display: flex;\r\n  position: fixed;\r\n  height: 100%;\r\n  width: 100%;\n}\n.ccl-center-panel {\r\n  height: 100vh;\r\n  position: relative;\r\n  padding-top: 71px;\r\n  padding-bottom: 70px;\r\n  flex: 1 1 0;\r\n  width: calc(100% - 280px);\n}\n.chat-ppl-thumbnail-wrap img,\r\n.cc1-chat-win-user-thumb img {\r\n  display: block;\r\n  border-radius: 18px;\r\n  overflow: hidden;\r\n  width: 36px;\n}\n.cc1-chat-win-header {\r\n  padding: 14px 16px;\r\n  position: absolute;\r\n  left: 0;\r\n  top: 0;\r\n  width: 100%;\r\n  background-color: #fff;\r\n  z-index: 1;\n}\n.cc1-chat-win-user {\r\n  display: inline-block;\r\n  float: left;\n}\n.cc1-chat-win-user-thumb,\r\n.cc1-left-panel-user-thumb {\r\n  display: inline-block;\r\n  width: 36px;\r\n  height: 36px;\r\n  margin-right: 10px;\r\n  vertical-align: middle;\r\n  border-radius: 24px;\r\n  overflow: hidden;\n}\n.cc1-chat-win-user-name-wrap,\r\n.cc1-left-panel-user-name-wrap {\r\n  display: inline-block;\r\n  vertical-align: middle;\n}\n.cc1-chat-win-user-name,\r\n.cc1-left-panel-user-name {\r\n  margin: 0;\r\n  font-size: 15px;\r\n  font-weight: 600;\r\n  letter-spacing: -0.1px;\r\n  line-height: 22px;\n}\n.cc1-chat-win-con-opt-wrap {\r\n  display: inline-block;\r\n  float: right;\r\n  padding: 8px 0;\n}\n.cc1-chat-win-user-status,\r\n.cc1-left-panel-user-status {\r\n  font-size: 13px;\r\n  letter-spacing: -0.1px;\r\n  line-height: 20px;\n}\n.cc1-chat-win-con-opt {\r\n  display: inline-block;\r\n  width: 20px;\r\n  height: 20px;\r\n  padding: 2px;\r\n  margin-left: 20px;\n}\n.cc1-chat-win-con-opt.call {\r\n  background: url(" + escape(__webpack_require__(/*! ./../assets/images/svg/call-blue-icon.svg */ "./resources/js/cometchat-components/assets/images/svg/call-blue-icon.svg")) + ") center center\r\n    no-repeat;\n}\n.cc1-chat-win-con-opt.video-call {\r\n  background: url(" + escape(__webpack_require__(/*! ./../assets/images/svg/video-call-blue-icon.svg */ "./resources/js/cometchat-components/assets/images/svg/video-call-blue-icon.svg")) + ") center center\r\n    no-repeat;\n}\n.cc1-chat-win-con-opt.details {\r\n  background: url(" + escape(__webpack_require__(/*! ./../assets/images/svg/details-pane-blue-icon.svg */ "./resources/js/cometchat-components/assets/images/svg/details-pane-blue-icon.svg")) + ") center\r\n    center no-repeat;\n}\n.cc1-chat-win-conver-wrap {\r\n  padding: 5px 16px;\r\n  height: calc(100vh - 132px);\r\n  overflow-y: auto;\r\n  background-color: #fff;\r\n  z-index: 1;\r\n  position: relative;\n}\n.cc1-chat-win-rcvr-msg-wrap {\r\n  display: inline-block;\r\n  border-radius: 12px;\r\n  background-color: rgba(248, 248, 248, 0.92);\r\n  padding: 8px 12px;\r\n  word-break: break-all;\n}\n.chat-txt-msg {\r\n  font-size: 15px;\r\n  margin: 0;\r\n  letter-spacing: -0.1px;\r\n  line-height: 20px;\n}\n.cc1-chat-win-rcvr-row {\r\n  margin-bottom: 16px;\n}\n.cc1-chat-win-msg-block {\r\n  display: inline-block;\r\n  position: relative;\r\n  max-width: 70%;\n}\n.cc1-chat-win-rcvr-row .cc1-chat-win-msg-block {\r\n  float: left;\n}\n.cc1-chat-win-sndr-row .cc1-chat-win-msg-block {\r\n  float: right;\n}\n.cc1-chat-win-sndr-row {\r\n  /* text-align: right; */\r\n  margin-bottom: 16px;\n}\n.cc1-chat-win-sndr-msg-wrap {\r\n  display: inline-block;\r\n  border-radius: 12px;\r\n  background-color: rgba(51, 153, 255, 0.92);\r\n  color: #fff;\r\n  padding: 8px 12px;\r\n  word-break: break-all;\n}\n.cc1-chat-win-timestamp {\r\n  display: inline-block;\r\n  font-size: 11px;\r\n  font-weight: 500;\r\n  letter-spacing: -0.1px;\r\n  line-height: 12px;\r\n  text-transform: uppercase;\r\n  margin-top: 5px;\n}\n.cc1-chat-win-rcvr-row .cc1-chat-win-timestamp {\r\n  margin-left: 5px;\n}\n.cc1-chat-win-msg-like-cnt {\r\n  display: inline-block;\r\n  float: right;\r\n  background-color: #fff;\r\n  border-radius: 9px;\r\n  font-size: 11px;\r\n  letter-spacing: -0.1px;\r\n  line-height: 12px;\r\n  box-shadow: rgba(20, 20, 20, 0.08) 0 2px 6px, rgba(20, 20, 20, 0.04) 0 1px 1px,\r\n    rgba(20, 20, 20, 0.04) 0 0 0 1px;\r\n  padding: 5px;\r\n  text-align: right;\r\n  margin-top: 3px;\n}\n.cc1-chat-win-sndr-row .cc1-chat-win-timestamp {\r\n  margin-right: 5px;\n}\n.cc1-chat-win-sndr-row .cc1-chat-win-timestamp svg {\r\n  margin-left: 3px;\r\n  display: inline-block;\r\n  vertical-align: bottom;\n}\n.cc1-chat-win-reply-for-msg {\r\n  letter-spacing: -0.1px;\r\n  line-height: 20px;\r\n  font-size: 15px;\r\n  position: relative;\r\n  padding-left: 8px;\r\n  margin-bottom: 7px;\n}\n.cc1-chat-win-reply-for-msg::before {\r\n  content: \"\";\r\n  display: block;\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n  width: 3px;\r\n  height: 96%;\r\n  background-color: rgba(20, 20, 20, 0.11);\r\n  border-radius: 2px;\n}\n.cc1-chat-win-location-wrap {\r\n  width: 308px;\r\n  height: 146px;\r\n  position: relative;\r\n  border-radius: 12px;\r\n  overflow: hidden;\r\n  background-color: rgba(248, 248, 248, 0.92);\n}\n.cc1-chat-win-location-dtls {\r\n  position: absolute;\r\n  display: block;\r\n  width: 100%;\r\n  bottom: 0;\r\n  left: 0;\r\n  padding: 10px 16px;\n}\n.cc1-chat-win-location-name {\r\n  margin: 0;\r\n  font-size: 15px;\r\n  font-weight: 600;\r\n  letter-spacing: -0.1px;\r\n  line-height: 20px;\n}\n.cc1-chat-win-location-txt {\r\n  font-size: 13px;\r\n  font-weight: 400;\r\n  letter-spacing: -0.1px;\r\n  line-height: 20px;\n}\n.cc1-chat-win-inpt-ext-wrap {\r\n  padding: 14px 0;\r\n  width: 100%;\r\n  position: absolute;\r\n  left: 0;\r\n  bottom: 0;\r\n  background-color: #fff;\r\n  z-index: 1;\n}\n.cc1-chat-win-inpt-int-wrap {\r\n  display: flex;\n}\n.cc1-chat-win-inpt-attach {\r\n  width: 60px;\r\n  text-align: center;\n}\n.cc1-chat-win-inpt-wrap {\r\n  flex: 1 1 0;\r\n  position: relative;\n}\n.cc1-chat-win-inpt-send {\r\n  width: 60px;\r\n  text-align: center;\n}\n.cc1-chat-win-inpt-attach a,\r\n.cc1-chat-win-inpt-send a {\r\n  padding: 3px;\r\n  margin-top: 7px;\r\n  display: inline-block;\n}\r\n/* .cc1-chat-win-inpt-send-btn img,\r\n.cc1-chat-win-inpt-voice-btn img {\r\n  display: none;\r\n} */\r\n/* .cc1-chat-win-inpt-send-btn {\r\n  width: 20px;\r\n  height: 18px;\r\n  background: url(./../assets/images/svg/send-blue-icon.svg) center center\r\n    no-repeat;\r\n}\r\n.cc1-chat-win-inpt-voice-btn {\r\n  width: 14px;\r\n  height: 19px;\r\n  background: url(./../assets/images/svg/voice-record-grey-icon.svg) center\r\n    center no-repeat;\r\n} */\r\n/* .cc1-chat-win-inpt-attach a img {\r\n  display: none;\r\n} */\r\n/* .cc1-chat-win-inpt-attach a {\r\n  width: 20px;\r\n  height: 20px;\r\n  background: url(./../assets/images/svg/rounded-plus-grey-icon.svg) center\r\n    center no-repeat;\r\n} */\na.cc1-chat-win-inpt-voice-btn {\r\n  margin-top: 5px;\n}\n.cc1-chat-win-inpt-box {\r\n  display: block;\r\n  width: 100%;\r\n  border: 0;\r\n  box-shadow: rgba(20, 20, 20, 0.04) 0 0 0 1px inset;\r\n  border-radius: 8px;\r\n  background-color: rgba(20, 20, 20, 0.04);\r\n  letter-spacing: -0.1px;\r\n  line-height: 20px;\r\n  padding: 6px 36px 6px 12px;\n}\n.smile-button {\r\n  width: 20px;\r\n  height: 20px;\r\n  display: block;\r\n  position: absolute;\r\n  right: 9px;\r\n  top: 6px;\r\n  background: url(" + escape(__webpack_require__(/*! ./../assets/images/svg/smilie-grey-icon.svg */ "./resources/js/cometchat-components/assets/images/svg/smilie-grey-icon.svg")) + ") center center\r\n    no-repeat;\n}\n.cc1-chat-win-inpt-rply-for-wrap {\r\n  position: relative;\r\n  padding: 0 14px 0 28px;\r\n  margin-bottom: 14px;\n}\n.cc1-chat-win-inpt-rply-for-wrap::before {\r\n  content: \"\";\r\n  display: block;\r\n  position: absolute;\r\n  top: 0;\r\n  left: 14px;\r\n  width: 3px;\r\n  height: 96%;\r\n  background-color: rgba(20, 20, 20, 0.11);\r\n  border-radius: 2px;\n}\n.cc1-chat-win-inpt-rply-ttl {\r\n  display: block;\r\n  font-size: 12px;\r\n  font-weight: 500;\r\n  letter-spacing: -0.1px;\r\n  line-height: 16px;\r\n  color: #969696;\n}\n.cc1-chat-win-inpt-rply-for-msg {\r\n  margin: 0;\r\n  font-size: 13px;\r\n  letter-spacing: -0.1px;\r\n  line-height: 18px;\n}\n.cc1-chat-win-inpt-rply-for-close {\r\n  position: absolute;\r\n  width: 20px;\r\n  height: 20px;\r\n  display: block;\r\n  background: url(" + escape(__webpack_require__(/*! ./../assets/images/svg/cross-grey-icon.svg */ "./resources/js/cometchat-components/assets/images/svg/cross-grey-icon.svg")) + ") center center /\r\n    10px no-repeat;\r\n  top: 7px;\r\n  right: 17px;\n}\n.cc1-chat-win-inpt-sug-wrap {\r\n  width: 100%;\r\n  position: absolute;\r\n  padding: 14px;\r\n  left: 0;\r\n  top: -62px;\r\n  z-index: 1;\r\n  text-align: center;\n}\n.cc1-chat-win-inpt-sug-msg {\r\n  box-shadow: rgba(20, 20, 20, 0.08) 0 2px 6px, rgba(20, 20, 20, 0.04) 0 1px 1px,\r\n    rgba(20, 20, 20, 0.04) 0 0 0 1px;\r\n  border-radius: 18px;\r\n  background-color: #fff;\r\n  display: inline-block;\r\n  padding: 8px 12px;\r\n  margin: 0 6px;\n}\n.cc1-chat-win-stik-popup {\r\n  position: absolute;\r\n  right: 44px;\r\n  bottom: 62px;\r\n  width: 280px;\r\n  height: 286px;\r\n  box-shadow: rgba(20, 20, 20, 0.2) 0 16px 32px,\r\n    rgba(20, 20, 20, 0.04) 0 0 0 1px;\r\n  border-radius: 8px;\r\n  background-color: #fff;\r\n  overflow: hidden;\r\n  z-index: 1;\n}\n.cc1-chat-win-stik-type-list {\r\n  padding: 15px 20px;\r\n  background-color: rgba(255, 255, 255, 0.92);\r\n  border-bottom: 1px solid #fdfcfc;\n}\n.cc1-chat-win-stik-typ {\r\n  display: inline-block;\r\n  width: 20px;\r\n  height: 20px;\r\n  margin: 0 7px;\n}\n.cc1-chat-win-stik-typ.search {\r\n  background: url(" + escape(__webpack_require__(/*! ./../assets/images/svg/search-grey-icon.svg */ "./resources/js/cometchat-components/assets/images/svg/search-grey-icon.svg")) + ") center center /\r\n    17px 18px no-repeat;\n}\n.cc1-chat-win-stik-typ.recent {\r\n  background: url(" + escape(__webpack_require__(/*! ./../assets/images/svg/recent-grey-icon.svg */ "./resources/js/cometchat-components/assets/images/svg/recent-grey-icon.svg")) + ") center center /\r\n    21px 18px no-repeat;\r\n  position: relative;\r\n  margin-right: 22px;\n}\n.cc1-chat-win-stik-typ.cheese {\r\n  background: url(" + escape(__webpack_require__(/*! ./../assets/images/svg/cheese-sector-grey-icon.svg */ "./resources/js/cometchat-components/assets/images/svg/cheese-sector-grey-icon.svg")) + ") center\r\n    center / 17px 19px no-repeat;\n}\n.cc1-chat-win-stik-typ.cube {\r\n  background: url(" + escape(__webpack_require__(/*! ./../assets/images/svg/cube-grey-icon.svg */ "./resources/js/cometchat-components/assets/images/svg/cube-grey-icon.svg")) + ") center center /\r\n    18px 18px no-repeat;\n}\n.cc1-chat-win-stik-typ.umbrella {\r\n  background: url(" + escape(__webpack_require__(/*! ./../assets/images/svg/umbrella-grey-icon.svg */ "./resources/js/cometchat-components/assets/images/svg/umbrella-grey-icon.svg")) + ") center center /\r\n    18px 18px no-repeat;\n}\n.cc1-chat-win-stik-typ.add {\r\n  background: url(" + escape(__webpack_require__(/*! ./../assets/images/svg/plus-grey-icon.svg */ "./resources/js/cometchat-components/assets/images/svg/plus-grey-icon.svg")) + ") center center /\r\n    20px no-repeat;\n}\n.cc1-chat-win-stik-typ.cheese.active {\r\n  background: url(" + escape(__webpack_require__(/*! ./../assets/images/svg/cheese-sector-blue-icon.svg */ "./resources/js/cometchat-components/assets/images/svg/cheese-sector-blue-icon.svg")) + ") center\r\n    center / 17px 19px no-repeat;\n}\n.cc1-chat-win-stik-typ.recent::before {\r\n  content: \"\";\r\n  position: absolute;\r\n  display: block;\r\n  width: 1px;\r\n  height: 20px;\r\n  background-color: rgba(20, 20, 20, 0.1);\r\n  top: 0;\r\n  right: -17px;\n}\n.cc1-chat-win-stik-type-wrap {\r\n  padding: 0 7px;\r\n  height: 238px;\n}\n.cc1-chat-win-stik-item {\r\n  display: inline-block;\r\n  width: 78px;\r\n  height: 80px;\r\n  margin: 3px;\r\n  float: left;\n}\n.ccl-chat-center-panel {\r\n  position: relative;\n}\n.ccl-center-panel-close-link,\r\n.ccl-right-panel-close-link {\r\n  position: absolute;\r\n  width: 32px;\r\n  height: 32px;\r\n  border-radius: 50%;\r\n  top: 34px;\r\n  left: 20px;\r\n  right: initial;\r\n  background: url(" + escape(__webpack_require__(/*! ./../assets/images/svg/left-blue-arrow.svg */ "./resources/js/cometchat-components/assets/images/svg/left-blue-arrow.svg")) + ") center center\r\n    no-repeat rgba(20, 20, 20, 0);\r\n  display: none;\r\n  z-index: 1;\n}\n.dark-theme {\r\n  background-color: #141414;\r\n  color: #fff;\n}\n.dark-theme .ccl-secondary-color {\r\n  color: rgba(255, 255, 255, 0.6);\n}\n.dark-theme .cc1-chat-win-header,\r\n.dark-theme .cc1-chat-win-conver-wrap,\r\n.dark-theme .cc1-chat-win-inpt-ext-wrap {\r\n  background-color: #141414;\n}\n.dark-theme .cc1-chat-win-rcvr-msg-wrap,\r\n.dark-theme .cc1-chat-win-location-wrap {\r\n  background-color: rgba(51, 51, 51, 0.92);\n}\n.dark-theme .cc1-chat-win-location-txt,\r\n.dark-theme .cc1-chat-win-timestamp,\r\n.dark-theme .cc1-chat-win-inpt-rply-for-msg {\r\n  color: rgba(255, 255, 255, 0.6);\n}\n.dark-theme .cc1-chat-win-msg-like-cnt {\r\n  color: rgba(255, 255, 255, 0.6);\r\n  background-color: rgba(51, 51, 51, 0.92);\n}\n.dark-theme .cc1-chat-win-inpt-rply-for-wrap::before {\r\n  background-color: rgba(255, 255, 255, 0.12);\n}\n.dark-theme .cc1-chat-win-inpt-box {\r\n  background-color: rgba(255, 255, 255, 0.08);\r\n  box-shadow: rgba(255, 255, 255, 0.04) 0 0 0 1px inset;\r\n  color: #fff;\n}\n.dark-theme .smile-button {\r\n  background: url(" + escape(__webpack_require__(/*! ./../assets/images/svg/smilie-light-grey-icon.svg */ "./resources/js/cometchat-components/assets/images/svg/smilie-light-grey-icon.svg")) + ") center\r\n    center no-repeat;\n}\n.dark-theme .cc1-chat-win-inpt-attach a {\r\n  background: url(" + escape(__webpack_require__(/*! ./../assets/images/svg/rounded-plus-light-grey-icon.svg */ "./resources/js/cometchat-components/assets/images/svg/rounded-plus-light-grey-icon.svg")) + ")\r\n    center center no-repeat;\n}\n.dark-theme .cc1-chat-win-inpt-rply-for-close {\r\n  background: url(" + escape(__webpack_require__(/*! ./../assets/images/svg/cross-light-grey-icon.svg */ "./resources/js/cometchat-components/assets/images/svg/cross-light-grey-icon.svg")) + ") center\r\n    center no-repeat;\n}\n.dark-theme .cc1-chat-win-inpt-sug-msg {\r\n  background-color: #424242;\n}\n.dark-theme .cc1-chat-win-stik-popup,\r\n.dark-theme .cc1-chat-win-stik-type-list {\r\n  background-color: rgba(51, 51, 51, 0.92);\r\n  border-bottom: none;\n}\n.dark-theme .cc1-chat-win-stik-typ.search {\r\n  background: url(" + escape(__webpack_require__(/*! ./../assets/images/svg/search-white-icon.svg */ "./resources/js/cometchat-components/assets/images/svg/search-white-icon.svg")) + ") center center /\r\n    17px 18px no-repeat;\n}\n.dark-theme .cc1-chat-win-stik-typ.recent {\r\n  background: url(" + escape(__webpack_require__(/*! ./../assets/images/svg/recent-light-grey-icon.svg */ "./resources/js/cometchat-components/assets/images/svg/recent-light-grey-icon.svg")) + ") center\r\n    center / 21px 18px no-repeat;\n}\n.dark-theme .cc1-chat-win-stik-typ.cheese {\r\n  background: url(" + escape(__webpack_require__(/*! ./../assets/images/svg/cheese-sector-light-grey-icon.svg */ "./resources/js/cometchat-components/assets/images/svg/cheese-sector-light-grey-icon.svg")) + ")\r\n    center center / 17px 19px no-repeat;\n}\n.dark-theme .cc1-chat-win-stik-typ.cube {\r\n  background: url(" + escape(__webpack_require__(/*! ./../assets/images/svg/cube-light-grey-icon.svg */ "./resources/js/cometchat-components/assets/images/svg/cube-light-grey-icon.svg")) + ") center center /\r\n    18px 18px no-repeat;\n}\n.dark-theme .cc1-chat-win-stik-typ.umbrella {\r\n  background: url(" + escape(__webpack_require__(/*! ./../assets/images/svg/umbrella-light-grey-icon.svg */ "./resources/js/cometchat-components/assets/images/svg/umbrella-light-grey-icon.svg")) + ") center\r\n    center / 18px 18px no-repeat;\n}\n.dark-theme .cc1-chat-win-stik-typ.add {\r\n  background: url(" + escape(__webpack_require__(/*! ./../assets/images/svg/plus-light-grey-icon.svg */ "./resources/js/cometchat-components/assets/images/svg/plus-light-grey-icon.svg")) + ") center center /\r\n    20px no-repeat;\n}\n.dark-theme .cc1-chat-win-stik-typ.cheese.active {\r\n  background: url(" + escape(__webpack_require__(/*! ./../assets/images/svg/cheese-sector-blue-icon.svg */ "./resources/js/cometchat-components/assets/images/svg/cheese-sector-blue-icon.svg")) + ") center\r\n    center / 17px 19px no-repeat;\n}\n.dark-theme .cc1-chat-win-stik-typ.recent::before {\r\n  background-color: rgba(255, 255, 255, 0.1);\n}\n.dark-theme .cc1-chat-win-inpt-voice-btn {\r\n  background: url(" + escape(__webpack_require__(/*! ./../assets/images/svg/voice-record-light-grey-icon.svg */ "./resources/js/cometchat-components/assets/images/svg/voice-record-light-grey-icon.svg")) + ")\r\n    center center no-repeat;\n}\n.cometchat-logo {\r\n  width: 200px;\r\n  margin: 0 auto;\n}\n@media (min-width : 320px) and (max-width : 767px) {\n.cc1-chat-win-inpt-ext-wrap {\r\n    bottom: 60px;\n}\n.cc1-chat-win-conver-wrap {\r\n    height: calc(100vh - 185px);\n}\n}\r\n\r\n\r\n", ""]);
 
 // exports
 
@@ -8071,7 +8128,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.cc1-chat-win-inpt-attach[data-v-6664a822] {\n  width: 300px;\n}\n.cometchat-image-viewer-container[data-v-6664a822] {\n  z-index: 3;\n  /* display: none; */\n  padding-top: 100px;\n  position: fixed;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  overflow: auto;\n  background-color: rgb(0,0,0);\n  background-color: rgba(0,0,0,0.4);\n}\n.media-wrap-container[data-v-6664a822] {\n  text-align: center;\n  max-width: 30%;\n  margin: 0 auto;\n  position: relative;\n  -webkit-animation: animatetop 0.4s;\n          animation: animatetop 0.4s;\n  /* box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19); */\n  /* background-color: #fff; */\n}\n.media-wrap-container img[data-v-6664a822] {\n  max-width: 100%;\n  margin: 0 auto;\n}\n.media-send-button[data-v-6664a822]{\n  background-color: #0008ff;\n  color: #fff;\n  display: inline-block;\n  padding: 10px 15px;\n  margin: 34px auto 5px;\n}\n\n/* .file-desc {\n  text-align: center;\n  color: #fff;\n} */\n.media-desc-container[data-v-6664a822] {\n  /* background-color: #fff; */\n  color: #fff;\n}\n@media (min-width : 320px) and (max-width : 767px) {\n.cc1-chat-win-inpt-attach[data-v-6664a822] {\n    width: 150px;\n}\n}\n\n", ""]);
+exports.push([module.i, "\n.cc1-chat-win-inpt-attach[data-v-6664a822] {\r\n  width: 300px;\n}\n.cometchat-image-viewer-container[data-v-6664a822] {\r\n  z-index: 3;\r\n  /* display: none; */\r\n  padding-top: 100px;\r\n  position: fixed;\r\n  left: 0;\r\n  top: 0;\r\n  width: 100%;\r\n  height: 100%;\r\n  overflow: auto;\r\n  background-color: rgb(0,0,0);\r\n  background-color: rgba(0,0,0,0.4);\n}\n.media-wrap-container[data-v-6664a822] {\r\n  text-align: center;\r\n  max-width: 30%;\r\n  margin: 0 auto;\r\n  position: relative;\r\n  -webkit-animation: animatetop 0.4s;\r\n          animation: animatetop 0.4s;\r\n  /* box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19); */\r\n  /* background-color: #fff; */\n}\n.media-wrap-container img[data-v-6664a822] {\r\n  max-width: 100%;\r\n  margin: 0 auto;\n}\n.media-send-button[data-v-6664a822]{\r\n  background-color: #0008ff;\r\n  color: #fff;\r\n  display: inline-block;\r\n  padding: 10px 15px;\r\n  margin: 34px auto 5px;\n}\r\n\r\n/* .file-desc {\r\n  text-align: center;\r\n  color: #fff;\r\n} */\n.media-desc-container[data-v-6664a822] {\r\n  /* background-color: #fff; */\r\n  color: #fff;\n}\n@media (min-width : 320px) and (max-width : 767px) {\n.cc1-chat-win-inpt-attach[data-v-6664a822] {\r\n    width: 150px;\n}\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -8091,7 +8148,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.avatar[data-v-23ffe03e] {\n  width: 100%x;\n  height: 100%;\n  color: #fff;\n  font-size: 18px;\n  text-align: center;\n  border-radius: 50%;\n  padding: 5px;\n}\n.back-btn[data-v-23ffe03e] {\n  background: url(" + escape(__webpack_require__(/*! ./../assets/images/svg/arrow_back_icon.svg */ "./resources/js/cometchat-components/assets/images/svg/arrow_back_icon.svg")) + ") no-repeat;\n  width: 22px;\n  height: 22px;\n  text-indent: 9999px;\n  background-size: contain;\n  display: none;\n  vertical-align: middle;\n}\n@media (min-width : 320px) and (max-width : 767px) {\n.back-btn[data-v-23ffe03e] {\n    display: inline-block;\n}\n}\n\n\n\n\n", ""]);
+exports.push([module.i, "\n.avatar[data-v-23ffe03e] {\r\n  width: 100%x;\r\n  height: 100%;\r\n  color: #fff;\r\n  font-size: 18px;\r\n  text-align: center;\r\n  border-radius: 50%;\r\n  padding: 5px;\n}\n.back-btn[data-v-23ffe03e] {\r\n  background: url(" + escape(__webpack_require__(/*! ./../assets/images/svg/arrow_back_icon.svg */ "./resources/js/cometchat-components/assets/images/svg/arrow_back_icon.svg")) + ") no-repeat;\r\n  width: 22px;\r\n  height: 22px;\r\n  text-indent: 9999px;\r\n  background-size: contain;\r\n  display: none;\r\n  vertical-align: middle;\n}\n@media (min-width : 320px) and (max-width : 767px) {\n.back-btn[data-v-23ffe03e] {\r\n    display: inline-block;\n}\n}\r\n\r\n\r\n\r\n\r\n", ""]);
 
 // exports
 
@@ -8110,7 +8167,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.sender-msg .cc1-chat-win-msg-time-wrap[data-v-209c8a0e] {\n  text-align: right;\n}\n.ccl-center[data-v-209c8a0e] {\n  text-align: center;\n  margin: 10px 0;\n}\n.dateSeperator[data-v-209c8a0e] {\n  background-color: rgba(210, 213, 215, 0.92);\n  border-radius: 7.5px;\n  box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.13);\n  padding: 5px 12px 6px;\n  text-align: center;\n  text-shadow: 0 1px 0 rgba(206, 165, 165, 0.4);\n  display: inline-block;\n}\n.message-file a[data-v-209c8a0e] {\n  text-decoration: underline;\n}\naudio[data-v-209c8a0e] {\n  max-width: 100%;\n}\n\n", ""]);
+exports.push([module.i, "\n.sender-msg .cc1-chat-win-msg-time-wrap[data-v-209c8a0e] {\r\n  text-align: right;\n}\n.ccl-center[data-v-209c8a0e] {\r\n  text-align: center;\r\n  margin: 10px 0;\n}\n.dateSeperator[data-v-209c8a0e] {\r\n  background-color: rgba(210, 213, 215, 0.92);\r\n  border-radius: 7.5px;\r\n  box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.13);\r\n  padding: 5px 12px 6px;\r\n  text-align: center;\r\n  text-shadow: 0 1px 0 rgba(206, 165, 165, 0.4);\r\n  display: inline-block;\n}\n.message-file a[data-v-209c8a0e] {\r\n  text-decoration: underline;\n}\naudio[data-v-209c8a0e] {\r\n  max-width: 100%;\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -8130,7 +8187,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* a{background:0 0}\nimg{border:0}\nbutton,input,select,textarea{font-family:inherit;font-size:100%;margin:0}\nbutton,input{line-height:normal}\ninput[type=\"checkbox\"],input[type=\"radio\"]{box-sizing:border-box;padding:0}\nhtml{text-size-adjust:100%;font-size:10px}\nbody{margin:0;padding:0;font-family:Inter,sans-serif;font-size:1.4rem;box-sizing:border-box;overflow-x:hidden;background-color:#fff;color:#141414}\nbody *{box-sizing:border-box}\nh1,h2,h3,h4,h5,h6{font-family:Inter,sans-serif;font-stretch:normal;font-weight:400}\nh4,.font-22{font-size:2.2rem;line-height:27px}\nh6,.font-18{font-size:1.8rem;line-height:24px}\na{text-decoration:none}\na{background-color:transparent} */\n/* img{border-style:none;max-width:100%;display:inherit} */\n/* button,input,select,textarea{font:inherit;margin:0} */\n/* button,input{overflow:visible} */\n[type=\"checkbox\"][data-v-7cd693c3],[type=\"radio\"][data-v-7cd693c3]{padding:0}\ninput[type=\"checkbox\"][data-v-7cd693c3],input[type=\"radio\"][data-v-7cd693c3]{display:none}\nlabel[data-v-7cd693c3]{cursor:pointer}\na[data-v-7cd693c3]{color:inherit}\n.ccl-semi-bold-text[data-v-7cd693c3]{font-weight:600}\n.ccl-text-uppercase[data-v-7cd693c3]{text-transform:uppercase}\n.ccl-center[data-v-7cd693c3]{text-align:center}\n.ccl-secondary-color[data-v-7cd693c3]{color:rgba(20,20,20,0.6)}\n.ccl-blue-color[data-v-7cd693c3]{color:#39f}\n.ccl-red-color[data-v-7cd693c3]{color:#ff3b30}\n.clearfix[data-v-7cd693c3]::after,.clearfix[data-v-7cd693c3]::before{content:\" \";display:table}\n.clearfix[data-v-7cd693c3],.clearfix[data-v-7cd693c3]::after{clear:both}\n.page-int-wrapper[data-v-7cd693c3]{display:flex;position:fixed;height:100%;width:100%}\n.ccl-right-panel[data-v-7cd693c3]{float:right;border-left:1px solid #eaeaea;height:100vh;width:280px;display:none}\n.ccl-left-panel-head-wrap[data-v-7cd693c3],.ccl-right-panel-head-wrap[data-v-7cd693c3]{padding:20px 16px;position:relative}\n.ccl-left-panel-head-ttl[data-v-7cd693c3],.ccl-right-panel-head-ttl[data-v-7cd693c3]{margin:0;font-weight:700;letter-spacing:-.5px}\n.ccl-dtls-panel-body[data-v-7cd693c3]{padding:16px}\n.ccl-dtls-noti-sel-wrap[data-v-7cd693c3]{margin-bottom:30px}\n.ccl-dtls-noti-sel-wrap input[type=\"checkbox\"] + label[data-v-7cd693c3],.ccl-more-noti-sel-wrap input[type=\"checkbox\"] + label[data-v-7cd693c3]{display:block;cursor:pointer;background:url(" + escape(__webpack_require__(/*! ./../assets/images/svg/checkbox-inactive.svg */ "./resources/js/cometchat-components/assets/images/svg/checkbox-inactive.svg")) + ") right center / 16px no-repeat;font-size:15px;letter-spacing:-.1px;line-height:23px;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}\n.ccl-dtls-noti-sel-wrap input[type=checkbox]:checked+label[data-v-7cd693c3], .ccl-more-noti-sel-wrap input[type=checkbox]:checked+label[data-v-7cd693c3] {background: url(" + escape(__webpack_require__(/*! ./../assets/images/svg/checkbox-blue-active.svg */ "./resources/js/cometchat-components/assets/images/svg/checkbox-blue-active.svg")) + ") no-repeat right center;background-size: 16px;}\n.ccl-dtls-panel-section[data-v-7cd693c3]{margin-bottom:30px}\n.ccl-dtls-panel-section-head[data-v-7cd693c3]{margin:0;font-size:12px;letter-spacing:-.1px;line-height:20px;text-transform:uppercase}\n.ccl-dtls-section-listitem-link[data-v-7cd693c3]{font-size:15px;letter-spacing:-.1px;line-height:20px;padding:6px 0;display:inline-block}\n.ccl-dtls-panel-media-fltr-wrap[data-v-7cd693c3]{margin-top:8px}\n.ccl-dtls-panel-media-fltrs[data-v-7cd693c3]{border-radius:8px;background-color:rgba(20,20,20,0.08);width:100%;padding:2px;margin-bottom:10px}\n.ccl-dtls-panel-media-fltr-btn[data-v-7cd693c3]{display:inline-block;width:33.33%;float:left;font-size:13px;font-weight:500;letter-spacing:-.1px;line-height:18px;padding:5px;position:relative}\n.ccl-dtls-panel-media-fltr-btn[data-v-7cd693c3]::before{content:\"\";position:absolute;display:block;width:2px;height:16px;background-color:rgba(20,20,20,0.12);right:-2px;top:6px}\n.ccl-dtls-panel-media-fltr-btn.active[data-v-7cd693c3]{background-color:#fff;box-shadow:rgba(20,20,20,0.04) 0 3px 1px,rgba(20,20,20,0.12) 0 3px 8px;border-radius:7px}\n.ccl-dtls-panel-media-fltrs .ccl-dtls-panel-media-fltr-btn[data-v-7cd693c3]:last-child::before,.ccl-dtls-panel-media-fltr-btn.active[data-v-7cd693c3]::before{display:none}\n.ccl-dtls-panel-media-type-wrap.photos .ccl-dtls-panel-media-item[data-v-7cd693c3]{display:inline-block;float:left;width:120px;border-radius:8px;overflow:hidden;margin-bottom:7px}\n.ccl-dtls-panel-media-type-wrap.photos .ccl-dtls-panel-media-item[data-v-7cd693c3]:nth-child(2n+1){margin-right:7px}\n.ccl-center-panel-close-link[data-v-7cd693c3],.ccl-right-panel-close-link[data-v-7cd693c3]{position:absolute;width:32px;height:32px;border-radius:50%;top:34px;left:20px;right:initial;background:url(" + escape(__webpack_require__(/*! ./../assets/images/svg/left-blue-arrow.svg */ "./resources/js/cometchat-components/assets/images/svg/left-blue-arrow.svg")) + ") center center no-repeat rgba(20,20,20,0);display:none;z-index:1}\n.dark-theme[data-v-7cd693c3]{background-color:#141414;color:#fff}\n.dark-theme .ccl-secondary-color[data-v-7cd693c3]{color:rgba(255,255,255,0.6)}\n.dark-theme .ccl-left-panel-call-fltrs[data-v-7cd693c3],.dark-theme .ccl-dtls-panel-media-fltrs[data-v-7cd693c3]{background-color:rgba(255,255,255,0.1)}\n.dark-theme .ccl-left-panel-call-fltr-btn.active[data-v-7cd693c3],.dark-theme .ccl-dtls-panel-media-fltr-btn.active[data-v-7cd693c3]{background-color:#636366}\n.back-btn[data-v-7cd693c3] {\n  background: url(" + escape(__webpack_require__(/*! ./../assets/images/svg/arrow_back_icon.svg */ "./resources/js/cometchat-components/assets/images/svg/arrow_back_icon.svg")) + ") no-repeat;\n  width: 22px;\n  height: 22px;\n  text-indent: 9999px;\n  background-size: contain;\n  display: none;\n  vertical-align: middle;\n  position: absolute;\n  top: 22px;\n  left: 20px;\n  z-index: 9;\n  display: none;\n}\n@media (min-width : 320px) and (max-width : 767px) {\n.back-btn[data-v-7cd693c3] {\n    display: inline-block;\n}\n}\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/* a{background:0 0}\r\nimg{border:0}\r\nbutton,input,select,textarea{font-family:inherit;font-size:100%;margin:0}\r\nbutton,input{line-height:normal}\r\ninput[type=\"checkbox\"],input[type=\"radio\"]{box-sizing:border-box;padding:0}\r\nhtml{text-size-adjust:100%;font-size:10px}\r\nbody{margin:0;padding:0;font-family:Inter,sans-serif;font-size:1.4rem;box-sizing:border-box;overflow-x:hidden;background-color:#fff;color:#141414}\r\nbody *{box-sizing:border-box}\r\nh1,h2,h3,h4,h5,h6{font-family:Inter,sans-serif;font-stretch:normal;font-weight:400}\r\nh4,.font-22{font-size:2.2rem;line-height:27px}\r\nh6,.font-18{font-size:1.8rem;line-height:24px}\r\na{text-decoration:none}\r\na{background-color:transparent} */\r\n/* img{border-style:none;max-width:100%;display:inherit} */\r\n/* button,input,select,textarea{font:inherit;margin:0} */\r\n/* button,input{overflow:visible} */\n[type=\"checkbox\"][data-v-7cd693c3],[type=\"radio\"][data-v-7cd693c3]{padding:0}\ninput[type=\"checkbox\"][data-v-7cd693c3],input[type=\"radio\"][data-v-7cd693c3]{display:none}\nlabel[data-v-7cd693c3]{cursor:pointer}\na[data-v-7cd693c3]{color:inherit}\n.ccl-semi-bold-text[data-v-7cd693c3]{font-weight:600}\n.ccl-text-uppercase[data-v-7cd693c3]{text-transform:uppercase}\n.ccl-center[data-v-7cd693c3]{text-align:center}\n.ccl-secondary-color[data-v-7cd693c3]{color:rgba(20,20,20,0.6)}\n.ccl-blue-color[data-v-7cd693c3]{color:#39f}\n.ccl-red-color[data-v-7cd693c3]{color:#ff3b30}\n.clearfix[data-v-7cd693c3]::after,.clearfix[data-v-7cd693c3]::before{content:\" \";display:table}\n.clearfix[data-v-7cd693c3],.clearfix[data-v-7cd693c3]::after{clear:both}\n.page-int-wrapper[data-v-7cd693c3]{display:flex;position:fixed;height:100%;width:100%}\n.ccl-right-panel[data-v-7cd693c3]{float:right;border-left:1px solid #eaeaea;height:100vh;width:280px;display:none}\n.ccl-left-panel-head-wrap[data-v-7cd693c3],.ccl-right-panel-head-wrap[data-v-7cd693c3]{padding:20px 16px;position:relative}\n.ccl-left-panel-head-ttl[data-v-7cd693c3],.ccl-right-panel-head-ttl[data-v-7cd693c3]{margin:0;font-weight:700;letter-spacing:-.5px}\n.ccl-dtls-panel-body[data-v-7cd693c3]{padding:16px}\n.ccl-dtls-noti-sel-wrap[data-v-7cd693c3]{margin-bottom:30px}\n.ccl-dtls-noti-sel-wrap input[type=\"checkbox\"] + label[data-v-7cd693c3],.ccl-more-noti-sel-wrap input[type=\"checkbox\"] + label[data-v-7cd693c3]{display:block;cursor:pointer;background:url(" + escape(__webpack_require__(/*! ./../assets/images/svg/checkbox-inactive.svg */ "./resources/js/cometchat-components/assets/images/svg/checkbox-inactive.svg")) + ") right center / 16px no-repeat;font-size:15px;letter-spacing:-.1px;line-height:23px;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}\n.ccl-dtls-noti-sel-wrap input[type=checkbox]:checked+label[data-v-7cd693c3], .ccl-more-noti-sel-wrap input[type=checkbox]:checked+label[data-v-7cd693c3] {background: url(" + escape(__webpack_require__(/*! ./../assets/images/svg/checkbox-blue-active.svg */ "./resources/js/cometchat-components/assets/images/svg/checkbox-blue-active.svg")) + ") no-repeat right center;background-size: 16px;}\n.ccl-dtls-panel-section[data-v-7cd693c3]{margin-bottom:30px}\n.ccl-dtls-panel-section-head[data-v-7cd693c3]{margin:0;font-size:12px;letter-spacing:-.1px;line-height:20px;text-transform:uppercase}\n.ccl-dtls-section-listitem-link[data-v-7cd693c3]{font-size:15px;letter-spacing:-.1px;line-height:20px;padding:6px 0;display:inline-block}\n.ccl-dtls-panel-media-fltr-wrap[data-v-7cd693c3]{margin-top:8px}\n.ccl-dtls-panel-media-fltrs[data-v-7cd693c3]{border-radius:8px;background-color:rgba(20,20,20,0.08);width:100%;padding:2px;margin-bottom:10px}\n.ccl-dtls-panel-media-fltr-btn[data-v-7cd693c3]{display:inline-block;width:33.33%;float:left;font-size:13px;font-weight:500;letter-spacing:-.1px;line-height:18px;padding:5px;position:relative}\n.ccl-dtls-panel-media-fltr-btn[data-v-7cd693c3]::before{content:\"\";position:absolute;display:block;width:2px;height:16px;background-color:rgba(20,20,20,0.12);right:-2px;top:6px}\n.ccl-dtls-panel-media-fltr-btn.active[data-v-7cd693c3]{background-color:#fff;box-shadow:rgba(20,20,20,0.04) 0 3px 1px,rgba(20,20,20,0.12) 0 3px 8px;border-radius:7px}\n.ccl-dtls-panel-media-fltrs .ccl-dtls-panel-media-fltr-btn[data-v-7cd693c3]:last-child::before,.ccl-dtls-panel-media-fltr-btn.active[data-v-7cd693c3]::before{display:none}\n.ccl-dtls-panel-media-type-wrap.photos .ccl-dtls-panel-media-item[data-v-7cd693c3]{display:inline-block;float:left;width:120px;border-radius:8px;overflow:hidden;margin-bottom:7px}\n.ccl-dtls-panel-media-type-wrap.photos .ccl-dtls-panel-media-item[data-v-7cd693c3]:nth-child(2n+1){margin-right:7px}\n.ccl-center-panel-close-link[data-v-7cd693c3],.ccl-right-panel-close-link[data-v-7cd693c3]{position:absolute;width:32px;height:32px;border-radius:50%;top:34px;left:20px;right:initial;background:url(" + escape(__webpack_require__(/*! ./../assets/images/svg/left-blue-arrow.svg */ "./resources/js/cometchat-components/assets/images/svg/left-blue-arrow.svg")) + ") center center no-repeat rgba(20,20,20,0);display:none;z-index:1}\n.dark-theme[data-v-7cd693c3]{background-color:#141414;color:#fff}\n.dark-theme .ccl-secondary-color[data-v-7cd693c3]{color:rgba(255,255,255,0.6)}\n.dark-theme .ccl-left-panel-call-fltrs[data-v-7cd693c3],.dark-theme .ccl-dtls-panel-media-fltrs[data-v-7cd693c3]{background-color:rgba(255,255,255,0.1)}\n.dark-theme .ccl-left-panel-call-fltr-btn.active[data-v-7cd693c3],.dark-theme .ccl-dtls-panel-media-fltr-btn.active[data-v-7cd693c3]{background-color:#636366}\n.back-btn[data-v-7cd693c3] {\r\n  background: url(" + escape(__webpack_require__(/*! ./../assets/images/svg/arrow_back_icon.svg */ "./resources/js/cometchat-components/assets/images/svg/arrow_back_icon.svg")) + ") no-repeat;\r\n  width: 22px;\r\n  height: 22px;\r\n  text-indent: 9999px;\r\n  background-size: contain;\r\n  display: none;\r\n  vertical-align: middle;\r\n  position: absolute;\r\n  top: 22px;\r\n  left: 20px;\r\n  z-index: 9;\r\n  display: none;\n}\n@media (min-width : 320px) and (max-width : 767px) {\n.back-btn[data-v-7cd693c3] {\r\n    display: inline-block;\n}\n}\r\n\r\n\r\n\r\n", ""]);
 
 // exports
 
@@ -8149,7 +8206,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.chat-contact-list-apla-ftlr[data-v-2e2dde2c] {\n  position: absolute;\n  top: 0;\n}\n.chat-ppl-listitem-dtls[data-v-2e2dde2c] {\n  display: inline-block;\n  flex: 1 1 0;\n  padding-bottom: 25px;\n  border-bottom: 1px solid #f7f7f7;\n  font-weight: 600;\n}\n.chat-ppl-listitem[data-v-2e2dde2c] {\n  padding: 22px 16px 0;\n  position: relative;\n  margin-top: -1px;\n  cursor: pointer;\n  display: flex;\n}\n.chat-ppl-listitem-name[data-v-2e2dde2c] {\n  font-size: 15px;\n  font-weight: 600;\n  letter-spacing: -.1px;\n  display: block;\n  max-width: 100%;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  padding: 7px 0 0;\n}\n", ""]);
+exports.push([module.i, "\n.chat-contact-list-apla-ftlr[data-v-2e2dde2c] {\r\n  position: absolute;\r\n  top: 0;\n}\n.chat-ppl-listitem-dtls[data-v-2e2dde2c] {\r\n  display: inline-block;\r\n  flex: 1 1 0;\r\n  padding-bottom: 25px;\r\n  border-bottom: 1px solid #f7f7f7;\r\n  font-weight: 600;\n}\n.chat-ppl-listitem[data-v-2e2dde2c] {\r\n  padding: 22px 16px 0;\r\n  position: relative;\r\n  margin-top: -1px;\r\n  cursor: pointer;\r\n  display: flex;\n}\n.chat-ppl-listitem-name[data-v-2e2dde2c] {\r\n  font-size: 15px;\r\n  font-weight: 600;\r\n  letter-spacing: -.1px;\r\n  display: block;\r\n  max-width: 100%;\r\n  overflow: hidden;\r\n  text-overflow: ellipsis;\r\n  white-space: nowrap;\r\n  padding: 7px 0 0;\n}\r\n", ""]);
 
 // exports
 
@@ -41974,7 +42031,9 @@ var render = function() {
     _vm._v(" "),
     _vm.usersList.length == 0
       ? _c("div", { staticClass: "cometchat-message-container" }, [
-          _c("p", [_vm._v("\n    " + _vm._s(_vm.messageToDisplay) + "\n    ")])
+          _c("p", [
+            _vm._v("\r\n    " + _vm._s(_vm.messageToDisplay) + "\r\n    ")
+          ])
         ])
       : _vm.usersList.length != 0
       ? _c(
@@ -42121,6 +42180,7 @@ var render = function() {
               }
             },
             [
+              _vm._v("\n                    @csrf\n                    "),
               _c("h3", [_vm._v("Enter user credentials")]),
               _vm._v(" "),
               _c("div", { staticClass: "form-wrapper" }, [
@@ -42188,7 +42248,7 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("button", { staticClass: "mt-3", attrs: { type: "submit" } }, [
-                _vm._v("Login   "),
+                _vm._v("\n                        Login   "),
                 _vm.showSpinner
                   ? _c("span", { staticClass: "fa fa-spin fa-spinner" })
                   : _vm._e()
@@ -42355,7 +42415,7 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("button", { staticClass: "mt-3", attrs: { type: "submit" } }, [
-                _vm._v("Register   "),
+                _vm._v("\n                        Register   "),
                 _vm.showSpinner
                   ? _c("span", { staticClass: "fa fa-spin fa-spinner" })
                   : _vm._e()
@@ -55042,7 +55102,7 @@ module.exports = "/images/checkbox-blue-active.svg?51b71e5e8ddab5f223d227ee990f6
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/images/checkbox-inactive.svg?15008e4922d2f78bd68bf33ed16beec2";
+module.exports = "/images/checkbox-inactive.svg?2213cabd00f941a7ae7e3f6597e36315";
 
 /***/ }),
 
@@ -56785,8 +56845,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Louie\Desktop\Projects\laravelComet\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Louie\Desktop\Projects\laravelComet\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Applicant\Desktop\lllllll\laraComet\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Applicant\Desktop\lllllll\laraComet\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

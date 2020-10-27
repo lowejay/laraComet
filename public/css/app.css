@@ -679,7 +679,7 @@ a.cc1-chat-win-inpt-voice-btn{ margin-top: 5px;}
 .ccl-call-center-panel-dtl-ttl.video-outgoing{background:url(/images/outgoing-call-video-grey-icon.svg?65bc8246af74cddd2dbdab3facde53d0) no-repeat left center}
 .ccl-dtls-panel-body{padding:16px}
 .ccl-dtls-noti-sel-wrap{margin-bottom:30px}
-.ccl-dtls-noti-sel-wrap input[type=checkbox]+label{display:block;cursor:pointer;background:url(/images/checkbox-inactive.svg?15008e4922d2f78bd68bf33ed16beec2) no-repeat right center;background-size:16px;font-size:15px;letter-spacing:-.1px;line-height:22px;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none;-o-user-select:none}
+.ccl-dtls-noti-sel-wrap input[type=checkbox]+label{display:block;cursor:pointer;background:url(/images/checkbox-inactive.svg?2213cabd00f941a7ae7e3f6597e36315) no-repeat right center;background-size:16px;font-size:15px;letter-spacing:-.1px;line-height:22px;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none;-o-user-select:none}
 .ccl-dtls-noti-sel-wrap input[type=checkbox]:checked+label{background:url(/images/checkbox-blue-active.svg?51b71e5e8ddab5f223d227ee990f6d54) no-repeat right center;background-size:16px}
 .ccl-dtls-panel-section{margin-bottom:30px}
 .ccl-dtls-panel-section-head{margin:0;font-size:12px;letter-spacing:-.1px;line-height:20px;text-transform:uppercase}
